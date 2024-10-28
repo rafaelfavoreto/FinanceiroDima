@@ -10,7 +10,7 @@
     <Folder Include="Models\Core\" /> 
     <Folder Include="Handler\" />
     <Folder Include="Common\" />
-    <Folder Include="Request\Account\" />
+    <Folder Include="Request\Account\" /> 
   </ItemGroup>
 
 </Project>
