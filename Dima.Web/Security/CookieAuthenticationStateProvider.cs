@@ -5,7 +5,9 @@ using Microsoft.AspNetCore.Components.Authorization;
 
 namespace Dima.Web.Security;
 
-public class CookieAuthenticationStateProvider : AuthenticationStateProvider  ,ICookieAuthenticationStateProvider
+public class CookieAuthenticationStateProvider : 
+    AuthenticationStateProvider,
+    ICookieAuthenticationStateProvider
 {
     private readonly HttpClient _client;
     private bool _isAuthenticaded = false;

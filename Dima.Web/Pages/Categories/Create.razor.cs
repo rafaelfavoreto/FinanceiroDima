@@ -9,7 +9,7 @@ public partial class CreateCategoryPage : ComponentBase
 {
     #region Proprieties
 
-    public bool IsBusy { get; set; }
+    public bool IsBusy { get; set; } = false;
     public CreateCategoryRequest InputModel { get; set; } = new ();
 
     #endregion

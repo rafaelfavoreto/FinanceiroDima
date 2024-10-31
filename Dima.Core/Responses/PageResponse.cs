@@ -1,9 +1,11 @@
 ﻿using Dima.Core.Configurations;
+using System.Text.Json.Serialization;
 
 namespace Dima.Core.Responses;
 
 public class PageResponse<TData> : BaseResponse<TData>
 {
+    [JsonConstructor]
     public PageResponse(
         TData? data, 
         int totalCount,

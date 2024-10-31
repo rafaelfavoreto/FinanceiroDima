@@ -1,14 +1,12 @@
-
-
 using System.Globalization;
-using Dima.Core.Handler;
-using Dima.Web;
-using Dima.Web.Handler;
-using Dima.Web.Security;
-using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
+using Dima.Web;
+using Dima.Web.Security;
+using Microsoft.AspNetCore.Components.Authorization;
 using MudBlazor.Services;
+using Dima.Core.Handler;
+using Dima.Web.Handler;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 
@@ -21,8 +19,9 @@ builder.Services.AddScoped<CookieHandler>();
 
 builder.Services.AddAuthorizationCore();
 
-builder.Services.AddScoped<AuthenticationStateProvider,CookieAuthenticationStateProvider>();
-builder.Services.AddScoped(x => (ICookieAuthenticationStateProvider)x.GetRequiredService<AuthenticationStateProvider>());
+builder.Services.AddScoped<AuthenticationStateProvider, CookieAuthenticationStateProvider>();
+builder.Services.AddScoped(x =>
+    (ICookieAuthenticationStateProvider)x.GetRequiredService<AuthenticationStateProvider>());
 
 builder.Services.AddMudServices();
 
@@ -37,6 +36,5 @@ builder.Services.AddTransient<ICategoryHandler, CategoryHandler>();
 builder.Services.AddLocalization();
 CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("pt-BR");
 CultureInfo.DefaultThreadCurrentUICulture = new CultureInfo("pt-BR");
-
 
 await builder.Build().RunAsync();

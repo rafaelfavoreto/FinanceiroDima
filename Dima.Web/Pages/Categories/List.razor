@@ -1,12 +1,22 @@
-﻿@page "/categories"
+﻿@page "/categorias"
 @inherits ListCategoriesPage
 
-<MudText Typo="Typo.h3">Categories</MudText>
-
-<div class="d-flex justify-end">
+<MudText Typo="Typo.h3">Categorias</MudText>
+<div class="d-flex justify-end pb-5">
 	<MudButton
-		Variant="Variant.Filled" Color="Color.Primary" StartIcon="@Icons.Material.TwoTone.Add" 
+		Variant="Variant.Filled"
+		Color="Color.Primary"
+		StartIcon="@Icons.Material.TwoTone.Add"
 		Href="/categorias/adicionar">
-		 Nova Categoria
+		NOVA CATEGORIA
 	</MudButton>
 </div>
+
+
+<MudDataGrid 
+	Items="@Categories">
+	<Columns>
+		<PropertyColumn Property="x=> x.Id" Title="#"/>
+		<PropertyColumn Property="x=> x.Title" Title="Categoria"/>
+	</Columns>
+</MudDataGrid>

@@ -1,3 +1,4 @@
+using System.Net.Http;
 using System.Net.Http.Json;
 using Dima.Core.Handler;
 using Dima.Core.Models;
@@ -10,7 +11,8 @@ public class CategoryHandler: ICategoryHandler
 {
     private static IHttpClientFactory _httpClientFactory;
     private readonly HttpClient _client;
-    public CategoryHandler(IHttpClientFactory httpClientFactory)
+
+    public CategoryHandler(IHttpClientFactory httpClientFactory, HttpClient client)
     {
         _httpClientFactory = httpClientFactory;
         _client = _httpClientFactory.CreateClient(Configuration.HttpClientName);
