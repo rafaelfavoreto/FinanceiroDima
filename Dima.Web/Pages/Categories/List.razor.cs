@@ -18,14 +18,10 @@ public partial class ListCategoriesPage : ComponentBase
 
     #region Services
 
-    [Inject]
-    public ISnackbar Snackbar { get; set; } = null!;
-
-    [Inject]
-    public IDialogService DialogService { get; set; } = null!;
-
-    [Inject]
-    public ICategoryHandler Handler { get; set; } = null!;
+    [Inject] public ISnackbar Snackbar { get; set; } = null!;
+    [Inject] public IDialogService DialogService { get; set; } = null!;
+    [Inject] public ICategoryHandler Handler { get; set; } = null!;
+    [Inject] public NavigationManager NavigationManager { get; set; } = null!;
 
     #endregion
 
@@ -54,6 +50,11 @@ public partial class ListCategoriesPage : ComponentBase
     #endregion
 
     #region Methods
+
+    public void OnEditButtonCliedAsync(long id)
+    {
+        NavigationManager.NavigateTo($"/categorias/editar/{id}");
+    }
 
     public async void OnDeleteButtonClickedAsync(long id, string title)
     {
