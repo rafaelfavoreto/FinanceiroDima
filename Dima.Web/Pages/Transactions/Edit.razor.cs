@@ -16,7 +16,7 @@ public partial class EditTransactionPage : ComponentBase
 
     public bool IsBusy { get; set; } = false;
     public UpdateTransactionRequest InputModel { get; set; } = new();
-    public List<Category> Categories { get; set; } = [];
+    public List<Category> Categories { get; set; } = new List<Category>();
 
     #endregion
 

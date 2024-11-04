@@ -134,10 +134,10 @@ public class TransactionHandler : ITransactionHandler
         {
             var query = _appDbContext.Transactions
                 .AsNoTracking()
-                .Where(x => x.CreateAt == request.StartDate
-                            && x.CreateAt == request.EndDate
+                .Where(x => x.PaidOrReceivedAt == request.StartDate
+                            && x.PaidOrReceivedAt == request.EndDate
                             && x.UserId == request.UserId)
-                .OrderBy(x => x.CreateAt);
+                .OrderBy(x => x.PaidOrReceivedAt);
 
             var count = await query.CountAsync();
 
